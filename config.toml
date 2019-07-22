@@ -1,0 +1,5 @@
+baseURL = "https://vguerrerobosch.com/"
+languageCode = "en-us"
+title = "Victor Guerrero - Web Developer"
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+disableHugoGeneratorInject = true

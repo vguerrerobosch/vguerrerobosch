@@ -1,0 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+a {
+  @apply .text-green;
+}
+
+@tailwind utilities;
