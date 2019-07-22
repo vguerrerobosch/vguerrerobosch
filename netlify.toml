@@ -5,7 +5,8 @@
   force = true
 
 [[redirects]]
-  from = "https://vguerrerobosch.com/ lang=en_US"
+  from = "https://vguerrerobosch.com/"
   to = "https://vguerrerobosch.com/"
+  query = {lang = ":lang"}
   status = 301
   force = true
