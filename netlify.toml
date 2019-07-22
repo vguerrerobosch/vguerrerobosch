@@ -3,3 +3,9 @@
   to = "https://vguerrerobosch.com/:splat"
   status = 301
   force = true
+
+[[redirects]]
+  from = "https://vguerrerobosch.com/ lang=en_US"
+  to = "https://vguerrerobosch.com/"
+  status = 301
+  force = true
