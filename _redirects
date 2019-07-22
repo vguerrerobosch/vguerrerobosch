@@ -1,4 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://vguerrerobosch.netlify.com/* https://vguerrerobosch.com/:splat 301!
-
-https://vguerrerobosch.com/?lang=en_US https://vguerrerobosch.com/ 301!
