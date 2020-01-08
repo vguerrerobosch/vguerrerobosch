@@ -1,5 +1,13 @@
 @tailwind base;
 
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("font-files/Inter-Light.woff2?v=3.11") format("woff2"), url("font-files/Inter-Light.woff?v=3.11") format("woff");
+}
+
 @tailwind components;
 
 a {

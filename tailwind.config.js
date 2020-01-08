@@ -6,8 +6,7 @@ module.exports = {
       'green': '#3CFFD8'
     },
     fontFamily: {
-      'sans': ['Nunito', 'sans-serif'],
-      'serif': ['Montserrat', 'sans-serif']
+      'sans': ['Inter', 'sans-serif']
     },
     extend: {
       'height': {
