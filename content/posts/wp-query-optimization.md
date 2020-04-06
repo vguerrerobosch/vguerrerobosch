@@ -35,4 +35,4 @@ add_filter('get_the_excerpt', function ($excerpt, $post) {
 
 What we are doing here is, when we attempt to get the excerpt, we remove the filter to make the responsive images and when we are done we add it back.
 
-This may seem not such a big deal, but when you are dealing with thousands of page requests, these kind of optimization will reduce de response time and ultimately your server costs.
+This may seem not such a big deal, but when you are dealing with thousands of page requests, these kind of optimization will reduce the response time and ultimately your server costs.
