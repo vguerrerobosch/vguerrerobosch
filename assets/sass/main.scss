@@ -28,11 +28,7 @@ pre {
 }
 
 code {
-  @apply .text-monstera-green .text-xs .bg-gray-800;
-
-  @screen sm {
-    @apply .text-sm;
-  }
+  @apply .text-monstera-green .text-sm .bg-gray-800;
 
   @screen lg {
     @apply .text-base;
