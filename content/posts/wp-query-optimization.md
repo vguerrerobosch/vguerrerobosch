@@ -16,7 +16,7 @@ SELECT wp_posts.* FROM wp_posts WHERE ID IN (290,291,292,293)
 SELECT post_id, meta_key, meta_value FROM wp_postmeta WHERE post_id IN (290,291,292,293) ORDER BY meta_id ASC
 ```
 
-where the IDs correspond to the media images in the post content. This ultimately leads to a N+1 problem which will impact site performance negatively. Furthermore, making the images responsive in the post excerpt is useless as they aren't displayed at all.
+where the IDs correspond to the media images in the post content. This ultimately leads to a N+1 problem which will impact site performance negatively. For a default blog index page with 10 posts, this represents up to 20 additional queries on top of 10 that already existed. Furthermore, making the images responsive in the post excerpt is useless as they aren't displayed at all.
 
 This problem can be solved with the following code snippet:
 
