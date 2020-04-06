@@ -11,7 +11,63 @@
 @tailwind components;
 
 a {
-  @apply .text-green;
+  @apply .text-monstera-green;
+}
+
+.markdown {
+  & > * + *, & li + li, & li > p + p {
+    @apply mt-6;
+  }
+}
+
+pre {
+  code {
+    @apply .block .overflow-x-auto .p-4 .bg-gray-800 .text-white .leading-loose .whitespace-pre .rounded;
+  }
+}
+
+code {
+  @apply .text-monstera-green .text-xs .bg-gray-800;
+
+  @screen sm {
+    @apply .text-sm;
+  }
+
+  @screen lg {
+    @apply .text-base;
+  }
+}
+
+:not(pre) > code {
+  @apply .px-1;
+}
+
+.chroma {
+  .k {
+    @apply .text-purple-500;
+  }
+
+  .nx {
+    @apply .text-blue-500;
+  }
+
+  .s1 {
+    @apply .text-green-500;
+  }
+
+  .mi {
+    @apply .text-red-500;
+  }
+}
+
+.language-php {
+  .cp:first-of-type {
+    display: none;
+    height: 0;
+    display: block;
+    overflow: hidden;
+    margin-bottom: -2rem;
+  }
 }
 
 @tailwind utilities;

@@ -1,40 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Victor Guerrero</title>
-  <meta name="description" content="Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.">
-  <meta property="og:title" content="Victor Guerrero">
-  <meta property="og:description" content="Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.">
-  <meta property="og:site_name" content="vguerrerobosch.com">
-  <meta property="og:image" content="https://vguerrerobosch.com/monstera-deliciosa-600.jpg">
-  <meta property="og:image:width" content="600">
-  <meta property="og:image:height" content="600">
-  <meta name="twitter:card" content="summary" />
-  <meta property="twitter:image" content="https://vguerrerobosch.com/monstera-deliciosa-600.jpg" />
-  <meta property="twitter:title" content="Victor Guerrero - Web Developer" />
-  <meta name="twitter:site" content="@vguerrerobosch" />
-  <meta name="twitter:creator" content="@vguerrerobosch" />
-  <script type="application/ld+json">{"@type":"WebSite","headline":"Victor Guerrero - Web Developer","description": "Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.","sameAs":["https://twitter.com/vguerrerobosch","https://github.com/vguerrerobosch"],"url":"https://www.vguerrerobosch.com/","image":"https://vguerrerobosch.com/monstera-deliciosa-600.jpg","name":"Victor Guerrero","@context":"https://schema.org"}</script>
-  <style>{{ (resources.Get "sass/main.scss" | toCSS | postCSS | minify).Content | safeCSS }}</style>
-</head>
-<body class="font-sans font-light sm:text-lg md:text-lg lg:text-xl bg-gray text-white antialiased">
-  <div class="flex flex-col-reverse md:flex-row min-h-screen">
-    <div class="relative z-10 p-8 pb-12 md:p-16 md:w-2/3 flex-grow md:flex-grow-0 md:max-w-2xl">
-      <img class="rounded-full w-24 md:w-32 shadow-inner -mt-20 md:mt-0 mb-6" src="victor-guerrero-bosch.jpg" width="600" height="600" alt="Victor Guerrero Bosch"/>
-      <h1 class="font-serif font-light text-2xl md:text-2xl mb-4">Hi, I’m Victor Guerrero</h1>
-      <p class="mb-6">I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.</p>
-      <ul class="mb-6">
-        <li><a href="http://wearefar.com">wearefar.com</a></li>
-        <li><a href="https://domo-a.com">domo-a.com</a></li>
-        <li><a href="https://blackpooldigital.com">blackpooldigital.com</a></li>
-      </ul>
-      <p>Follow me on <a href="https://twitter.com/vguerrerobosch" title="vguerrerobosch on Twitter">Twitter</a> or email me at victor [at] estudifar.com.</p>
-    </div>
-    <div class="relative h-0 pb-40 md:pb-0 md:h-auto md:flex-grow" role="presentation">
-      <img class="absolute h-full w-full object-cover" src="monstera-deliciosa.jpg" alt="Monstera Deliciosa"/>
-    </div>
+{{ define "main" }}
+
+<div class="flex flex-col-reverse md:flex-row min-h-screen">
+  <div class="relative z-10 p-8 pb-12 md:p-16 md:w-2/3 flex-grow md:flex-grow-0 md:max-w-2xl">
+    <img class="rounded-full w-24 md:w-32 shadow-inner -mt-20 md:mt-0 mb-6" src="victor-guerrero-bosch.jpg" width="600" height="600" alt="Victor Guerrero Bosch"/>
+    <h1 class="font-serif font-light text-2xl md:text-2xl mb-4">Hi, I’m Victor Guerrero</h1>
+    <p class="mb-6">I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.</p>
+    <ul class="mb-6">
+      <li><a href="http://wearefar.com">wearefar.com</a></li>
+      <li><a href="https://domo-a.com">domo-a.com</a></li>
+      <li><a href="https://blackpooldigital.com">blackpooldigital.com</a></li>
+    </ul>
+    <p>Follow me on <a href="https://twitter.com/vguerrerobosch" title="vguerrerobosch on Twitter">Twitter</a> or email me at victor [at] estudifar.com.</p>
   </div>
-</body>
+  <div class="relative h-0 pb-40 md:pb-0 md:h-auto md:flex-grow" role="presentation">
+    <img class="absolute h-full w-full object-cover" src="monstera-deliciosa.jpg" alt="Monstera Deliciosa"/>
+  </div>
+</div>
+
+<div class="hidden">
+  <ul>
+    {{ range (where $.Site.RegularPages "Section" "posts") }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ end }}

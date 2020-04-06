@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {{ if not (eq .Title $.Site.Title) }}
+    <title>{{ .Title }} — {{ $.Site.Title }}</title>
+  {{ else }}
+    <title>{{ $.Site.Title }}</title>
+  {{ end }}
+
+  {{ block "meta" . }}
+    <meta name="description" content="Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:description" content="Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.">
+    <meta property="og:image" content="https://vguerrerobosch.com/monstera-deliciosa-600.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:site_name" content="vguerrerobosch.com">
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="https://vguerrerobosch.com/monstera-deliciosa-600.jpg" />
+    <meta name="twitter:title" content="{{ .Title }}" />
+    <meta name="twitter:description" content="Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects." />
+    <meta name="twitter:site" content="@vguerrerobosch" />
+    <meta name="twitter:creator" content="@vguerrerobosch" />
+    <script type="application/ld+json">{"@type":"WebSite","headline":"Victor Guerrero - Web Developer","description": "Hi, I’m Victor Guerrero. I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.","sameAs":["https://twitter.com/vguerrerobosch","https://github.com/vguerrerobosch"],"url":"https://www.vguerrerobosch.com/","image":"https://vguerrerobosch.com/monstera-deliciosa-600.jpg","name":"Victor Guerrero","@context":"https://schema.org"}</script>
+  {{ end }}
+
+  <style>{{ (resources.Get "sass/main.scss" | toCSS | postCSS | minify).Content | safeCSS }}</style>
+</head>
+<body class="font-sans font-light text-base sm:text-lg lg:text-xl bg-grey text-white antialiased">
+  {{ block "main" . }}{{ end }}
+</body>
+</html>
+
+

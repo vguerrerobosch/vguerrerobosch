@@ -1,5 +1,12 @@
 baseURL = "https://vguerrerobosch.com/"
 languageCode = "en-us"
-title = "Victor Guerrero - Web Developer"
+title = "Victor Guerrero Bosch"
 disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 disableHugoGeneratorInject = true
+
+# pygmentsUseClassic = true
+pygmentsCodeFences = true
+pygmentsUseClasses=true
+
+[permalinks]
+  posts = "/:slug"
