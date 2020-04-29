@@ -34,6 +34,10 @@
 </head>
 <body class="font-sans font-light text-base sm:text-lg lg:text-xl bg-grey text-white antialiased">
   {{ block "main" . }}{{ end }}
+
+  {{ if eq hugo.Environment "production" }}
+    <script src="https://cdn.usefathom.com/3.js" site="QINLFDTK"></script>
+  {{ end }}
 </body>
 </html>
 
