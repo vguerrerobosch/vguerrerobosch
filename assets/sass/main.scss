@@ -5,7 +5,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("fonts/Inter-Light.woff2?v=3.12") format("woff2"), url("fonts/Inter-Light.woff?v=3.12") format("woff");
+  src: url("/fonts/Inter-Light.woff2?v=3.12") format("woff2"), url("/fonts/Inter-Light.woff?v=3.12") format("woff");
 }
 
 @tailwind components;
