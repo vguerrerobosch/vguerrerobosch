@@ -7,6 +7,8 @@ thumbnail: /images/wordpress-query-optimization.png
 
 It's a fairly common scenario in WordPress sites to have a loop of posts where we display the post title and the excerpt. Many times, users don't provide an excerpt when they submit new content, so the excerpt is generated form the content itself.
 
+<!--more-->
+
 WordPress 4.4.0 introduced `wp_make_content_images_responsive` function that filters all `img` elements in the post content to add `srcset` and `sizes` attributes. This function is hooked to the `the_content` filter.
 
 So now, when we get the excerpt, if the `post_excerpt` is empty and the post content contains images from the media library, WordPress will run 2 database queries for each post like:

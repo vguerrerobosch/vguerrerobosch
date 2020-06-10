@@ -4,25 +4,30 @@
   <div class="relative z-10 p-8 pb-12 md:p-16 md:w-2/3 flex-grow md:flex-grow-0 md:max-w-2xl">
     <img class="rounded-full w-24 md:w-32 shadow-inner -mt-20 md:mt-0 mb-6" src="victor-guerrero-bosch.jpg" width="600" height="600" alt="Victor Guerrero Bosch"/>
     <h1 class="font-serif font-light text-2xl md:text-2xl mb-4">Hi, I’m Victor Guerrero</h1>
-    <p class="mb-6">I’m a civil engineer refactored to web developer. I love to design and build beautiful apps and sites from scratch with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects.</p>
+    <p class="mb-6">{{ .Site.Params.bio }}</p>
     <ul class="mb-6">
       <li><a href="http://wearefar.com">wearefar.com</a></li>
-      <li><a href="https://domo-a.com">domo-a.com</a></li>
       <li><a href="https://blackpooldigital.com">blackpooldigital.com</a></li>
     </ul>
-    <p>Follow me on <a href="https://twitter.com/vguerrerobosch" title="vguerrerobosch on Twitter">Twitter</a> or email me at victor [at] estudifar.com.</p>
+    <p>You can also find me on <a href="https://twitter.com/vguerrerobosch">Twitter</a>, <a href="https://github.com/vguerrerobosch">Github</a> or email me at victor [at] estudifar.com.</p>
+
+    <div class="border-t border-gray-700 pt-10 mt-10">
+      {{ range (where $.Site.RegularPages "Section" "posts") }}
+      <article>
+        <h1><a href="{{ .Permalink }}" class="block text-white hover:text-monstera-green transition-colors duration-300 leading-tight mb-1">{{ .Title }}</a></h1>
+        <div class="mb-4 text-base text-gray-500">
+          <time datetime="{{ .PublishDate }}" class="text-base">{{ .PublishDate.Format "January 2, 2006" }}</time> &mdash; {{ .ReadingTime }} min read
+        </div>
+        <div class="mb-2 text-base">{{ .Summary }}</div>
+        <a href="{{ .Permalink }}" class="text-base hover:underline">Read more</a>
+      </article>
+      {{ end }}
+    </div>
+
   </div>
   <div class="relative h-0 pb-40 md:pb-0 md:h-auto md:flex-grow" role="presentation">
     <img class="absolute h-full w-full object-cover" src="monstera-deliciosa.jpg" alt="Monstera Deliciosa"/>
   </div>
-</div>
-
-<div class="hidden">
-  <ul>
-    {{ range (where $.Site.RegularPages "Section" "posts") }}
-    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
 </div>
 
 {{ end }}

@@ -6,7 +6,12 @@ disableHugoGeneratorInject = true
 
 # pygmentsUseClassic = true
 pygmentsCodeFences = true
-pygmentsUseClasses=true
+pygmentsUseClasses = true
+
+summaryLength = 55
+
+[params]
+  bio="I'm a web developer based in Barcelona. I craft tailor-made websites and web applications with the best tools available. Currently I’m working with Laravel, Statamic, TailwindCSS and VueJS. I also maintain several tailormade WordPress projects."
 
 [permalinks]
   posts = "/:slug"
